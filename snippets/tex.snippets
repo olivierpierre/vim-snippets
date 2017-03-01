@@ -233,7 +233,7 @@ snippet ft \footnote
 snippet fig figure environment (includegraphics)
 	\\begin{figure}
 	\\begin{center}
-		\\includegraphics[scale=${1}]{Figures/${2}}
+		\\includegraphics[width=${1}\\textwidth]{Includes/${2}}
 	\\end{center}
 	\\caption{${3}}
 	\\label{fig:${4}}
@@ -269,9 +269,15 @@ snippet sum \sum^{}_{}
 snippet lim \lim_{}
 	\\lim_{${1:n \\to \\infty}} ${0}
 snippet frame frame environment
-	\\begin{frame}[${1:t}]{${2:title}}
+	\\begin{frame}
+		\\frametitle{\\secname}
+		\\framesubtitle{\\subsecname}
+		
 		${0:${VISUAL}}
+		
 	\\end{frame}
+	
+	%% ----------- NEXT FRAME ------------ 
 snippet block block environment
 	\\begin{block}{${1:title}}
 		${0:${VISUAL}}
@@ -286,10 +292,10 @@ snippet example exampleblock environment
 	\\end{exampleblock}
 snippet col2 two-column environment
 	\\begin{columns}
-		\\begin{column}{0.5\\textwidth}
+		\\begin{column}{0.48\\textwidth}
 			${1}
 		\\end{column}
-		\\begin{column}{0.5\\textwidth}
+		\\begin{column}{0.48\\textwidth}
 			${0}
 		\\end{column}
 	\\end{columns}
@@ -310,9 +316,10 @@ snippet lra langle rangle
 	\\langle ${0} \\rangle
 # Code listings
 snippet lst
-	\\begin{listing}[language=${1:language}]
+	\\begin{lstlisting}[language=${1:language}]
 		${0:${VISUAL}}
-	\\end{listing}
+	\\end{lstlisting}
+	\\vspace{-25px}
 snippet lsi
 	\\lstinline|${1}| ${0}
 # Hyperlinks
