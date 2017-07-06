@@ -275,6 +275,14 @@ snippet sum \sum^{}_{}
 	\\sum^{${1:n}}_{${2:i=1}} ${0}
 snippet lim \lim_{}
 	\\lim_{${1:n \\to \\infty}} ${0}
+
+snippet ra rightarrow
+	$\rightarrow$ 
+snippet ig includegraphics environment
+	\\begin{center}
+		\\includegraphics[width=${0:${VISUAL}}\textwidth]{}
+	\\end{center}
+
 snippet frame frame environment
 	\\begin{frame}
 		\\frametitle{\\secname}
@@ -324,7 +332,7 @@ snippet lra langle rangle
 # Code listings
 snippet lst
 	\\begin{lstlisting}[language=${1:language}]
-		${0:${VISUAL}}
+	${0:${VISUAL}}
 	\\end{lstlisting}
 	\\vspace{-25px}
 snippet lsi
